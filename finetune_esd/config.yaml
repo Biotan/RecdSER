@@ -1,0 +1,75 @@
+# ============================================================
+# ESD downstream emotion classification config (RecdSER.finetune_esd)
+#
+# Only training hyperparameters + head dims + label spec live here.
+# Backbone structure is defined in RecdSER/modules/config.yaml.
+# ============================================================
+
+common:
+  seed: 42
+  # trained safetensors go to ./RecdSER/checkpoints/ESD/
+  output_dir: ./RecdSER/checkpoints/ESD
+  device: cuda
+
+# ======================== Dataset ========================
+dataset:
+  catalog_path: /apdcephfs_tj5/share_2967269/jingangtan/dataset/EMOTION2/label_data/catalog_map/ESD.txt
+  audio_root: /apdcephfs_tj5/share_2967269/jingangtan/dataset/EMOTION2/label_data/format
+  sample_rate: 16000
+
+  # Original emotion tags to KEEP from the catalog. Samples whose emotion_tag
+  # is not listed here will be discarded.
+  target_emotions: ["Angry", "Happy", "Neutral", "Sad", "Surprised"]
+
+  # Optional {original_tag: target_tag} mapping applied AFTER filtering.
+  # Leave as {} to keep the original labels unchanged.
+  # The final training labels (`class_labels`) and label_dim are derived
+  # automatically:
+  #   - emotion_mapping == {}  ->  class_labels = target_emotions
+  #   - emotion_mapping != {}  ->  class_labels = order-preserving unique
+  #                                 [emotion_mapping.get(e, e) for e in target_emotions]
+  # The derived class_labels is also written to the saved safetensors as the
+  # `label_class` metadata, so inference.py knows the label names.
+  emotion_mapping: {}
+
+  # ---- Data split ----
+  # Finetune uses a single train / val split, no K-fold CV:
+  #   val_ratio == 0.0     -> ALL samples used for training, no val set.
+  #   0 < val_ratio < 1.0  -> stratified random split: (1 - val_ratio) train +
+  #                           val_ratio val. Best model is picked by val metric.
+  val_ratio: 0.1
+
+  batch_size: 128
+  num_workers: 32
+  max_sample_size: 320000   # 20 s @ 16 kHz
+
+# ======================== Model (head only) ========================
+# Backbone structure lives in RecdSER/modules/config.yaml.
+model:
+  swin_ffa_checkpoint: ./RecdSER/checkpoints/recdser_base.safetensors
+  swin_ffa_config: ./RecdSER/modules/config.yaml
+
+  # MLP classification head
+  # input_dim: leave commented to inherit backbone.proj_dim automatically.
+  # input_dim: 768
+  hidden_dim: 256
+  # label_dim / num_classes are automatically inferred from
+  # the derived class_labels (see dataset.emotion_mapping above).
+
+# ======================== Training ========================
+# Single end-to-end run: the whole network (backbone + head) is trainable
+# from the start; there is no frozen/unfrozen stage split.
+training:
+  optimizer: RMSprop
+  weight_decay: 1.0e-5
+  monitor_metric: WA
+  use_class_weight: true
+
+  num_epochs: 30
+  lr: 1.0e-5
+
+# ===================== LR Scheduler =====================
+lr_scheduler:
+  name: CyclicLR
+  max_lr: 5.0e-5
+  step_size_up: 5

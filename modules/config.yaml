@@ -1,0 +1,38 @@
+# ============================================================
+# Swin-FFA-Net V2 backbone configuration (network structure only).
+# No training settings are included. Used by the open-source inference API.
+# ============================================================
+
+# Pretrained backbone checkpoint path (safetensors format, plain state_dict).
+# Released weights live under RecdSER/checkpoints/:
+#   - recdser_base.safetensors          : backbone only (for embedding extraction)
+#   - recdser_finetune_base.safetensors : backbone + MLP head (for classification)
+checkpoint: checkpoints/recdser_base.safetensors
+
+# Mel spectrogram front-end
+sample_rate: 16000
+n_mels: 80
+n_fft: 1024
+hop_length: 256
+
+# Swin Transformer branch (2-Stage hierarchical)
+embed_dim: 384          # Stage1 dim (Stage2 auto = 768)
+num_heads: 12
+window_size: 8          # Stage1 window (Stage2 auto = 16)
+mlp_ratio: 4.0
+stage1_blocks: 6
+stage2_blocks: 8
+
+# Frequency branch (ConvNeXt-style)
+freq_compress_dim: 256
+num_freq_blocks: 6
+freq_kernel_size: 7
+
+# Regularization (structure only; disabled at inference)
+drop: 0.1
+attn_drop: 0.1
+drop_path: 0.2
+
+# Projection head dim. Set to the proj_dim used during pretraining (e.g. 768).
+# The backbone embedding dim (proj_dim=0) is 2*(embed_dim*2)=1536.
+proj_dim: 768
