@@ -46,7 +46,7 @@ characteristics of emotional speech.
 <table width="960">
   <tr>
     <td valign="top" align="center" width="50%"><sub><b>Fig. 1</b> — Embedding space visualizations on the ESD dataset. (a, b) Single speaker with 10 text contents across 5 emotions; (c, d) 10 speakers with a single text content across 5 emotions. Numbers denote text IDs in (a, b) and speaker IDs in (c, d). Panels (a, c) show emotion2vec and (b, d) show RECDSER. While emotion2vec is dominated by semantics and speaker traits, RECDSER forms distinct emotion clusters with minimal interference from text or speaker timbre.</sub></td>
-    <td valign="top" align="center" width="50%"><sub><b>Fig. 2</b> — Causal deconfounding framework (structural causal model + backdoor adjustment)</sub></td>
+    <td valign="top" align="center" width="50%"><sub><b>Fig. 2</b> — Causal deconfounding framework (structural causal model + backdoor adjustment):</sub><br/><img src="imgs/eq_backdoor.png" width="330"/></td>
   </tr>
 </table>
 
@@ -317,7 +317,7 @@ If you find RecdSER or SynthEmoVoice useful in your research, please consider ci
 ```bibtex
 @inproceedings{recdser,
   title     = {RecdSER: Representation Learning via Causal Deconfounding for Speech Emotion Recognition},
-  author    = {Tan, Jingang and others},
+  author    = {Tan Jingang and zixun Sun and Shuang Zhao and Yating Zhang},
   booktitle = {Proceedings},
   year      = {2026}
 }
