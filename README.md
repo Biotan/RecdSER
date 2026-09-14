@@ -42,8 +42,8 @@ characteristics of emotional speech.
 
 <table width="960">
   <tr>
-    <td valign="top" align="center" width="50%"><img src="imgs/emotion2vec-3D.gif" alt="emotion2vec 3D embedding visualization" width="100%"/></td>
-    <td valign="top" align="center" width="50%"><img src="imgs/RecdSER-3D.gif" alt="RecdSER 3D embedding visualization" width="100%"/></td>
+    <td valign="top" align="center" width="50%"><img src="imgs/emotion2vec-3D.gif" alt="emotion2vec 3D embedding visualization on ESD dataset without fine-tuning, different colors represent different emotions" width="100%"/></td>
+    <td valign="top" align="center" width="50%"><img src="imgs/RecdSER-3D.gif" alt="RecdSER 3D embedding visualization on ESD dataset without fine-tuning, different colors represent different emotions" width="100%"/></td>
   </tr>
   <tr>
     <td align="center"><sub><b>emotion2vec</b> — 3D embedding visualization</sub></td>
