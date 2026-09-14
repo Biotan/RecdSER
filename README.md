@@ -40,22 +40,27 @@ characteristics of emotional speech.
 
 <div align="center">
 
-|  |  |
-|:--:|:--:|
-<img src="imgs/Fig1.png" width="760"/> 
-**Fig. 1** — Emotion representation capability comparison 
+<!-- Fig.1 & Fig.2 : equal-height merged image (rendered as one, always aligned) -->
+<img src="imgs/row1_fig1_fig2.png" width="960"/>
 
-<img src="imgs/Fig2.png" width="760"/>
+<table width="960">
+  <tr>
+    <td valign="top" align="center" width="50%"><sub><b>Fig. 1</b> — Embedding space visualizations on the ESD dataset. (a, b) Single speaker with 10 text contents across 5 emotions; (c, d) 10 speakers with a single text content across 5 emotions. Numbers denote text IDs in (a, b) and speaker IDs in (c, d). Panels (a, c) show emotion2vec and (b, d) show RECDSER. While emotion2vec is dominated by semantics and speaker traits, RECDSER forms distinct emotion clusters with minimal interference from text or speaker timbre.</sub></td>
+    <td valign="top" align="center" width="50%"><sub><b>Fig. 2</b> — Causal deconfounding framework (structural causal model + backdoor adjustment)</sub></td>
+  </tr>
+</table>
 
-**Fig. 2** — Causal deconfounding framework (structural causal model + backdoor adjustment)
+<br/>
 
-<img src="imgs/Fig3.png" width="760"/>
+<!-- Fig.3 & Fig.4 : equal-height merged image -->
+<img src="imgs/row2_fig3_fig4.png" width="960"/>
 
-**Fig. 3** — SynthEmoVoice parallel emotional-speech synthesis pipeline
-
-<img src="imgs/Fig4.png" width="760"/>
-
-**Fig. 4** — Time–frequency dual-domain SER model architecture
+<table width="960">
+  <tr>
+    <td valign="top" align="center" width="56%"><sub><b>Fig. 3</b> — SynthEmoVoice parallel emotional-speech synthesis pipeline</sub></td>
+    <td valign="top" align="center" width="44%"><sub><b>Fig. 4</b> — Time–frequency dual-domain SER model architecture</sub></td>
+  </tr>
+</table>
 
 </div>
 
