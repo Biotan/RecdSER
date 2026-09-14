@@ -40,6 +40,19 @@ characteristics of emotional speech.
 
 <div align="center">
 
+<table width="960">
+  <tr>
+    <td valign="top" align="center" width="50%"><img src="imgs/emotion2vec-3D.gif" alt="emotion2vec 3D embedding visualization" width="100%"/></td>
+    <td valign="top" align="center" width="50%"><img src="imgs/RecdSER-3D.gif" alt="RecdSER 3D embedding visualization" width="100%"/></td>
+  </tr>
+  <tr>
+    <td align="center"><sub><b>emotion2vec</b> — 3D embedding visualization</sub></td>
+    <td align="center"><sub><b>RecdSER</b> — 3D embedding visualization</sub></td>
+  </tr>
+</table>
+
+<br/>
+
 <!-- Fig.1 & Fig.2 : equal-height merged image (rendered as one, always aligned) -->
 <img src="imgs/row1_fig1_fig2.png" width="960"/>
 
