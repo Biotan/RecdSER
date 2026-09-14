@@ -46,32 +46,32 @@ characteristics of emotional speech.
     <td valign="top" align="center" width="50%"><img src="imgs/RecdSER-3D.gif" alt="RecdSER 3D embedding visualization on ESD dataset without fine-tuning, different colors represent different emotions" width="100%"/></td>
   </tr>
   <tr>
-    <td align="center"><sub><b>emotion2vec</b> — 3D embedding visualization</sub></td>
-    <td align="center"><sub><b>RecdSER</b> — 3D embedding visualization</sub></td>
+    <td valign="top" align="center"><sub><b>Fig. 1 — emotion2vec</b> — 3D embedding visualization on the ESD dataset without fine-tuning. Different colors represent different emotions.</sub></td>
+    <td valign="top" align="center"><sub><b>Fig. 2 — RecdSER</b> — 3D embedding visualization on the ESD dataset without fine-tuning. Different colors represent different emotions.</sub></td>
   </tr>
 </table>
 
 <br/>
 
-<!-- Fig.1 & Fig.2 : equal-height merged image (rendered as one, always aligned) -->
+<!-- Fig.3 & Fig.4 : equal-height merged image (rendered as one, always aligned) -->
 <img src="imgs/row1_fig1_fig2.png" width="960"/>
 
 <table width="960">
   <tr>
-    <td valign="top" align="center" width="50%"><sub><b>Fig. 1</b> — Embedding space visualizations on the ESD dataset. (a, b) Single speaker with 10 text contents across 5 emotions; (c, d) 10 speakers with a single text content across 5 emotions. Numbers denote text IDs in (a, b) and speaker IDs in (c, d). Panels (a, c) show emotion2vec and (b, d) show RECDSER. While emotion2vec is dominated by semantics and speaker traits, RECDSER forms distinct emotion clusters with minimal interference from text or speaker timbre.</sub></td>
-    <td valign="top" align="center" width="50%"><sub><b>Fig. 2</b> — Causal deconfounding framework (structural causal model + backdoor adjustment):</sub><br/><img src="imgs/eq_backdoor.png" width="330"/></td>
+    <td valign="top" align="center" width="50%"><sub><b>Fig. 3</b> — Embedding space visualizations on the ESD dataset. (a, b) Single speaker with 10 text contents across 5 emotions; (c, d) 10 speakers with a single text content across 5 emotions. Numbers denote text IDs in (a, b) and speaker IDs in (c, d). Panels (a, c) show emotion2vec and (b, d) show RECDSER. While emotion2vec is dominated by semantics and speaker traits, RECDSER forms distinct emotion clusters with minimal interference from text or speaker timbre.</sub></td>
+    <td valign="top" align="center" width="50%"><sub><b>Fig. 4</b> — Causal deconfounding framework (structural causal model + backdoor adjustment):</sub><br/><img src="imgs/eq_backdoor.png" width="330"/></td>
   </tr>
 </table>
 
 <br/>
 
-<!-- Fig.3 & Fig.4 : equal-height merged image -->
+<!-- Fig.5 & Fig.6 : equal-height merged image -->
 <img src="imgs/row2_fig3_fig4.png" width="960"/>
 
 <table width="960">
   <tr>
-    <td valign="top" align="center" width="56%"><sub><b>Fig. 3</b> — SynthEmoVoice parallel emotional-speech synthesis pipeline</sub></td>
-    <td valign="top" align="center" width="44%"><sub><b>Fig. 4</b> — Time–frequency dual-domain SER model architecture</sub></td>
+    <td valign="top" align="center" width="56%"><sub><b>Fig. 5</b> — SynthEmoVoice parallel emotional-speech synthesis pipeline</sub></td>
+    <td valign="top" align="center" width="44%"><sub><b>Fig. 6</b> — Time–frequency dual-domain SER model architecture</sub></td>
   </tr>
 </table>
 
