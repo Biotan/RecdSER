@@ -317,7 +317,7 @@ If you find RecdSER or SynthEmoVoice useful in your research, please consider ci
 ```bibtex
 @inproceedings{recdser,
   title     = {RecdSER: Representation Learning via Causal Deconfounding for Speech Emotion Recognition},
-  author    = {Tan Jingang and zixun Sun and Shuang Zhao and Yating Zhang},
+  author    = {Tan Jingang and Zixun Sun and Shuang Zhao and Yating Zhang},
   booktitle = {Proceedings},
   year      = {2026}
 }
@@ -325,4 +325,4 @@ If you find RecdSER or SynthEmoVoice useful in your research, please consider ci
 
 ## License
 
-Please refer to the top-level `LICENSE` of this repository.
+Released under the MIT license.
