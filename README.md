@@ -103,8 +103,8 @@ Three checkpoints are released under the [RecdSER weights repo](https://huggingf
 | Checkpoint | Training recipe | Use case |
 |------------|-----------------|----------|
 | **`recdser_base.safetensors`** | Representation learning on **15k-hour** SynthEmoVoice | Embedding extraction |
-| **`recdser_finetune_base.safetensors`** | Fine-tuned on open-source emotional speech + partially-licensed data (**440 h**) | Embedding extraction **and** emotion label prediction |
-| **`recdser_finetune_large.safetensors`** | **Stage-1** fine-tune on SynthEmoVoice → **Stage-2** fine-tune on 440 h open-source + partially-licensed data | Embedding extraction **and** emotion label prediction |
+| **`recdser_finetune_real.safetensors`** | Fine-tuned on open-source emotional speech + partially-licensed data (**440 h**) | Embedding extraction **and** emotion label prediction |
+| **`recdser_finetune_fusion.safetensors`** | **Stage-1** fine-tune on SynthEmoVoice → **Stage-2** fine-tune on 440 h open-source + partially-licensed data | Embedding extraction **and** emotion label prediction |
 
 > All weights are plain `.safetensors` (state-dict + JSON metadata, no `pickle`).
 > Checkpoints with a classification head carry a `label_class` metadata field, so
@@ -181,7 +181,7 @@ per-class probabilities:
 
 ```bash
 python -m RecdSER.inference \
-    --checkpoint ./checkpoints/recdser_finetune_large.safetensors \
+    --checkpoint ./checkpoints/recdser_finetune_fusion.safetensors \
     --audio  sample.wav \
     --output_label --output_probs
 ```
@@ -196,7 +196,7 @@ Emit **everything** (label + probs + embedding) into a single `.npz`:
 
 ```bash
 python -m RecdSER.inference \
-    --checkpoint ./checkpoints/recdser_finetune_large.safetensors \
+    --checkpoint ./checkpoints/recdser_finetune_fusion.safetensors \
     --audio  sample.wav \
     --output_label --output_probs --output_embedding \
     --output result.npz
@@ -209,7 +209,7 @@ from RecdSER.inference import load_audio, run_inference
 
 result = run_inference(
     [load_audio("sample.wav")],
-    checkpoint="./checkpoints/recdser_finetune_large.safetensors",
+    checkpoint="./checkpoints/recdser_finetune_fusion.safetensors",
     device="cuda",
     output_embedding=True,
     output_label=True,
